@@ -11,9 +11,9 @@ Este é um projeto de API para um aplicativo de solicitação e prestação de s
 ### Backend
 
 - **Node.js**: Ambiente de execução para o JavaScript no servidor.
--- **Express**: Framework web para Node.js.
--- **UUIDv4**: Para geração de identificadores únicos universais.
---**JWT (JSON Web Token)**: Para autenticação e autorização.
+- **Express**: Framework web para Node.js.
+- **UUIDv4**: Para geração de identificadores únicos universais.
+-**JWT (JSON Web Token)**: Para autenticação e autorização.
 
 ### Banco de Dados
 
