@@ -4,15 +4,21 @@ Este é um projeto de API para um aplicativo de solicitação e prestação de s
 
 ## Tecnologias Utilizadas
 
+### Linguagens
+
 - **TypeScript**: Para uma tipagem segura no JavaScript.
+
+### Backend
+
 - **Node.js**: Ambiente de execução para o JavaScript no servidor.
-- **Express**: Framework web para Node.js.
-- **MySQL**: Banco de dados relacional, gerenciado com Docker.
+-- **Express**: Framework web para Node.js.
+-- **UUIDv4**: Para geração de identificadores únicos universais.
+--**JWT (JSON Web Token)**: Para autenticação e autorização.
+
+### Banco de Dados
+
+- **MySQL**: Banco de dados relacional.
 - **Docker**: Para facilitar a configuração e o gerenciamento do MySQL.
-- **UUIDv4**: Para geração de identificadores únicos universais.
-- **JWT (JSON Web Token)**: Para autenticação e autorização.
-- **Axios**: Para realizar requisições HTTP no frontend.
-- **React**: Para a interface do usuário no frontend.
 
 ## Instalação
 
