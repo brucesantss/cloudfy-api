@@ -1,12 +1,18 @@
+//dependencias
 import express from 'express';
 import 'dotenv/config';
 import cors from 'cors';
 
+import userRoute from './routes/userRoute';
+
 const app = express();
+app.use(express.json());
 
 app.use(cors({
     origin: 'http://localhost:3000'
 }))
+
+app.use('/signup', userRoute);
 
 const PORT = process.env.PORT || 8080;
 
