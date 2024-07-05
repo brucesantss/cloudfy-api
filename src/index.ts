@@ -12,7 +12,7 @@ app.use(cors({
     origin: 'http://localhost:3000'
 }))
 
-app.use('/signup', userRoute);
+app.use('/', userRoute); //signup
 
 const PORT = process.env.PORT || 8080;
 

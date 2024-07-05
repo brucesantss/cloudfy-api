@@ -5,5 +5,6 @@ export const pool = mysql2.createPool({
     user: 'root',
     password: 'root',
     database: 'cloudfy',
+    port: 3030,
     waitForConnections: true
 });
