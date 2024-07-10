@@ -44,7 +44,6 @@ export const registerUser = async (req: Request, res: Response) => {
 
         }
 
-
         //criando hash de senha = + segurança
         const salt = await bcrypt.genSalt(12);
         const passwordHash = await bcrypt.hash(pass, salt);
@@ -62,6 +61,34 @@ export const registerUser = async (req: Request, res: Response) => {
         console.log(err);
         return res.status(500).json({ message: 'erro no servidor.' })
     }
+}
+
+export const loginUser = async (req: Request, res: Response) => {
+    const { email, pass } = req.body;
+
+    //verificando se campos estão preenchidos
+    if(!email || !pass){
+        return res.status(400).json({ message: 'todos os campos são obrigatórios.' })
+    }
+
+    //conferindo email no formato válido
+    if(!validator.isEmail(email)){
+        return res.status(400).json({ message: 'formato de email inválido.' })
+    }
+
+    //buscando pelo email no db
+    const findUserQuery = 'SELECT * FROM users WHERE email = ?';
+    const [rows]: any = await pool.execute(findUserQuery, [email]); //query verificando no db
+
+    if(rows.length < 1){
+        return res.status(404).json({ message: 'conta não encontrada.' })
+    }
+
+    return res.status(200).json({ message: 'entrando na conta...' })
+
+
+    //verificação de hash de senhas
+    // const compareHash = bcrypt.compare(pass, rows.email)
 }
 
 export const getAllUsers = async (req: Request, res: Response) => {
